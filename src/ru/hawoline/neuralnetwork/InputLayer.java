@@ -5,35 +5,35 @@ import java.util.Arrays;
 
 public class InputLayer extends Layer {
 
-	public InputLayer initLayer(InputLayer inputLayer) {
-		
-		ArrayList<Double> listOfWeightInTemp = new ArrayList<Double>();
-		ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
-		
-		for (int i = 0; i < inputLayer.getNumberOfNeuronsInLayer(); i++) {
-			Neuron neuron = new Neuron();
-			
-			listOfWeightInTemp.add( neuron.initNeuron() );
+    public InputLayer initLayer(InputLayer inputLayer) {
 
-			neuron.setListOfWeightIn( listOfWeightInTemp );
-			listOfNeurons.add( neuron );
+        ArrayList<Double> listOfWeightInTemp = new ArrayList<Double>();
+        ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
 
-			listOfWeightInTemp = new ArrayList<Double>();
-		}
+        for (int i = 0; i < inputLayer.getNumberOfNeuronsInLayer(); i++) {
+            Neuron neuron = new Neuron();
 
-		inputLayer.setListOfNeurons(listOfNeurons);
+            listOfWeightInTemp.add(neuron.initNeuron());
 
-		return inputLayer;
-	}
+            neuron.setListOfWeightIn(listOfWeightInTemp);
+            listOfNeurons.add(neuron);
 
-	public void printLayer(InputLayer inputLayer){
-		System.out.println("### INPUT LAYER ###");
-		int n = 1;
-		for (Neuron neuron : inputLayer.getListOfNeurons()) {
-			System.out.println("Neuron #" + n + ":");
-			System.out.println("Input Weights:");
-			System.out.println(Arrays.deepToString( neuron.getListOfWeightIn().toArray() ));
-			n++;
-		}
-	}
+            listOfWeightInTemp = new ArrayList<Double>();
+        }
+
+        inputLayer.setListOfNeurons(listOfNeurons);
+
+        return inputLayer;
+    }
+
+    public void printLayer(InputLayer inputLayer) {
+        System.out.println("### INPUT LAYER ###");
+        int n = 1;
+        for (Neuron neuron : inputLayer.getListOfNeurons()) {
+            System.out.println("Neuron #" + n + ":");
+            System.out.println("Input Weights:");
+            System.out.println(Arrays.deepToString(neuron.getListOfWeightIn().toArray()));
+            n++;
+        }
+    }
 }
