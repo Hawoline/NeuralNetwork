@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class OutputLayer extends Layer {
 
     public OutputLayer initLayer(OutputLayer outputLayer) {
-        ArrayList<Double> listOfWeightOutTemp = new ArrayList<Double>();
-        ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
+        ArrayList<Double> listOfWeightOutTemp = new ArrayList<>();
+        ArrayList<Neuron> listOfNeurons = new ArrayList<>();
 
         for (int i = 0; i < outputLayer.getNumberOfNeuronsInLayer(); i++) {
             Neuron neuron = new Neuron();
@@ -17,7 +17,7 @@ public class OutputLayer extends Layer {
             neuron.setListOfWeightOut(listOfWeightOutTemp);
             listOfNeurons.add(neuron);
 
-            listOfWeightOutTemp = new ArrayList<Double>();
+            listOfWeightOutTemp = new ArrayList<>();
         }
 
         outputLayer.setListOfNeurons(listOfNeurons);
