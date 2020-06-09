@@ -7,8 +7,8 @@ public class InputLayer extends Layer {
 
     public InputLayer initLayer(InputLayer inputLayer) {
 
-        ArrayList<Double> listOfWeightInTemp = new ArrayList<Double>();
-        ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
+        ArrayList<Double> listOfWeightInTemp = new ArrayList<>();
+        ArrayList<Neuron> listOfNeurons = new ArrayList<>();
 
         for (int i = 0; i < inputLayer.getNumberOfNeuronsInLayer(); i++) {
             Neuron neuron = new Neuron();
@@ -18,7 +18,7 @@ public class InputLayer extends Layer {
             neuron.setListOfWeightIn(listOfWeightInTemp);
             listOfNeurons.add(neuron);
 
-            listOfWeightInTemp = new ArrayList<Double>();
+            listOfWeightInTemp = new ArrayList<>();
         }
 
         inputLayer.setListOfNeurons(listOfNeurons);
